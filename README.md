@@ -1,6 +1,9 @@
 Compile Mustache
 ================
 
+Synopsis:
+---------
+
     compile_mustache TEMPLATE.mustache [DATA.json] > OUTPUT.html
 
 Requirements:
@@ -11,4 +14,6 @@ Requirements:
 * Python: `pip install -r pip.txt
 
 * JavaScript/Node: `npm install`
+
+* All together: `make`
 
