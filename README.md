@@ -1,6 +1,9 @@
 Compile Mustache
 ================
 
+Compile Mustache templates in PHP, Python or JavaScript. You can optionally
+provide a JSON file containing input data.
+
 Synopsis:
 ---------
 
