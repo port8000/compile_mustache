@@ -10,12 +10,12 @@ deps-js:
 	npm install
 
 deps-php:
-	composer install
+	composer install -q
 
 deps-py:
-	pip install -r pip.txt
+	pip install -q -r pip.txt
 
-test:
+test: deps
 	@echo "* do syntax checks"
 	@jshint compile_mustache.js
 	@php --syntax-check compile_mustache.php >/dev/null
