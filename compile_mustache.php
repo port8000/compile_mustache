@@ -21,6 +21,10 @@ if (count($argv) < 2) {
   exit(1);
 }
 $template = file_get_contents($argv[1]);
+if ($template === FALSE) {
+  fwrite(STDERR, "usage: compile_templates template.mustache [data.json]\n");
+  exit(1);
+}
 
 
 if (count($argv) > 2) {
