@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-require 'vendor/mustache/mustache/Mustache/Autoloader.php';
+require __DIR__.'/vendor/mustache/mustache/src/Mustache/Autoloader.php';
 Mustache_Autoloader::register();
 
 
