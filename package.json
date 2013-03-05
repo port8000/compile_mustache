@@ -1,0 +1,7 @@
+{
+  "name": "compile_mustache",
+  "version": "0.1.0",
+  "dependencies": {
+    "mustache": "~0.7.0"
+  }
+}

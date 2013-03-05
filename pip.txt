@@ -1,0 +1,4 @@
+# Name: compile_mustache
+# Version: 0.1.0
+
+pystache

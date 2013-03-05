@@ -1,0 +1,7 @@
+{
+  "name": "compile_mustache",
+  "version": "0.1.0",
+  "require": {
+    "mustache/mustache": "2.1.*"
+  }
+}
