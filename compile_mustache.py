@@ -8,12 +8,18 @@ import sys
 
 
 class partials(object):
+    partials_root = 'templates/partials'
     def get(self, name):
         """return the template code of a partial located
         in templates/partials/
         """
-        with open('templates/partials/'+name+'.mustache') as partial:
-            return partial.read().decode('utf-8')
+        r = ""
+        try:
+            with open(self.partials_root+'/'+name+'.mustache') as partial:
+                r = partial.read().decode('utf-8')
+        except IOError:
+            sys.stderr.write('Couldn\'t find partial '+name+'\n')
+        return r
 
 
 try:

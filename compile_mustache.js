@@ -7,6 +7,7 @@
 var Mustache = require('mustache');
 var fs = require('fs');
 var view = {};
+var partials_root = 'templates/partials';
 
 try {
   var template = fs.readFileSync(process.argv[2], 'utf-8');
@@ -23,7 +24,14 @@ try {
  * return the template code of a partial located in templates/partials/
  */
 function partials(name) {
-  return fs.readFileSync('templates/partials/'+name+'.mustache', 'utf-8');
+  var template = '';
+  try {
+    template = fs.readFileSync(partials_root+'/'+name+'.mustache',
+                               'utf-8');
+  } catch (e) {
+    process.stderr.write('Couldn\'t find partial '+name+'\n');
+  }
+  return template;
 }
 
 

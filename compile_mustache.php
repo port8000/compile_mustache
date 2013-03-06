@@ -6,12 +6,20 @@ Mustache_Autoloader::register();
 
 
 class partials implements Mustache_Loader {
+
+    public $partials_root = "templates/partials";
+
     /**
     * return the template code of a partial located in templates/partials/
     */
     public function load($name) {
-        return file_get_contents(sprintf('templates/partials/%s.mustache',
-                                         $name));
+        $tpl = sprintf('%s/%s.mustache', $this->partials_root, $name);
+        if (is_file($tpl)) {
+            return file_get_contents($tpl);
+        } else {
+            fwrite(STDERR, "Couldn't find partial $name\n");
+            return '';
+        }
     }
 }
 
